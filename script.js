@@ -4,7 +4,9 @@ const navToggle = document.querySelector(".nav-toggle");
 const navMenu = document.querySelector(".nav-menu");
 const navLinks = Array.from(document.querySelectorAll(".nav-menu a"));
 const reveals = document.querySelectorAll(".reveal");
+const titleReveals = document.querySelectorAll(".section-heading h2");
 const sections = Array.from(document.querySelectorAll("main section[id]"));
+let activeSectionId = "";
 
 const savedTheme = localStorage.getItem("theme");
 const initialTheme = savedTheme || "light";
@@ -42,8 +44,26 @@ if ("IntersectionObserver" in window) {
   );
 
   reveals.forEach((item) => revealObserver.observe(item));
+
+  const titleObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-title-visible");
+          titleObserver.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.3,
+      rootMargin: "0px 0px -12% 0px",
+    }
+  );
+
+  titleReveals.forEach((item) => titleObserver.observe(item));
 } else {
   reveals.forEach((item) => item.classList.add("is-visible"));
+  titleReveals.forEach((item) => item.classList.add("is-title-visible"));
 }
 
 function applyTheme(theme) {
@@ -65,6 +85,11 @@ if (initialSection) {
 }
 
 function setCurrentSection(section) {
+  if (!section || activeSectionId === section.id) {
+    return;
+  }
+
+  activeSectionId = section.id;
   const current = `#${section.id}`;
   body.dataset.section = section.dataset.tone || section.id;
   sections.forEach((item) => {
