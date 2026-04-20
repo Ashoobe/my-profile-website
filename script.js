@@ -69,9 +69,13 @@ if ("IntersectionObserver" in window) {
 function applyTheme(theme) {
   body.dataset.theme = theme;
   if (themeToggle) {
-    const label = theme === "dark" ? "Dark" : "Light";
-    themeToggle.setAttribute("aria-pressed", String(theme === "dark"));
-    themeToggle.querySelector(".theme-toggle-text").textContent = label;
+    const isDark = theme === "dark";
+    themeToggle.setAttribute("aria-pressed", String(isDark));
+    themeToggle.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
+    themeToggle.setAttribute("title", isDark ? "Light mode" : "Dark mode");
+    themeToggle.querySelector(".theme-toggle-text").textContent = isDark
+      ? "Dark mode active"
+      : "Light mode active";
   }
 }
 
