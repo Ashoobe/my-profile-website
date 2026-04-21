@@ -483,7 +483,7 @@ body[data-theme="dark"] .theme-toggle:focus-visible {
   position: relative;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 6.5rem 2rem;
+  padding: 5rem 2rem;
 }
 
 .section > * {
@@ -494,8 +494,8 @@ body[data-theme="dark"] .theme-toggle:focus-visible {
 .section::before {
   content: "";
   position: absolute;
-  top: 1rem;
-  bottom: 1rem;
+  top: 0;
+  bottom: 0;
   left: calc(50% - 50vw);
   right: calc(50% - 50vw);
   border-top: 1px solid rgba(255, 255, 255, 0.04);
@@ -766,12 +766,44 @@ body:not([data-theme="dark"]) .project-card {
   overflow: visible;
 }
 
+body[data-theme="light"] .portrait-card {
+  isolation: isolate;
+}
+
+body[data-theme="light"] .portrait-card::before {
+  content: "";
+  position: absolute;
+  top: 1.6rem;
+  left: 50%;
+  width: 112%;
+  aspect-ratio: 0.88;
+  transform: translateX(-50%);
+  border-radius: 36px;
+  background:
+    radial-gradient(circle at 50% 35%, rgba(119, 208, 200, 0.32), transparent 42%),
+    radial-gradient(circle at 50% 78%, rgba(143, 186, 242, 0.28), transparent 56%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.5), transparent 64%);
+  filter: blur(42px);
+  opacity: 1;
+  z-index: 0;
+  pointer-events: none;
+}
+
 .portrait-main {
   width: 100%;
   aspect-ratio: 0.88;
   object-fit: cover;
   border-radius: 22px;
   box-shadow: var(--shadow-lift);
+  position: relative;
+  z-index: 1;
+}
+
+body[data-theme="light"] .portrait-main {
+  box-shadow:
+    0 28px 56px rgba(20, 32, 42, 0.18),
+    0 18px 32px rgba(20, 32, 42, 0.1),
+    0 0 42px rgba(119, 208, 200, 0.16);
 }
 
 .portrait-caption {
@@ -780,6 +812,8 @@ body:not([data-theme="dark"]) .project-card {
   gap: 0.3rem;
   padding: 0 0.25rem;
   text-align: center;
+  position: relative;
+  z-index: 1;
 }
 
 .portrait-name {
@@ -1539,7 +1573,7 @@ button:focus-visible {
 
   .section {
     width: min(94vw, 100%);
-    padding: 4.5rem 1rem;
+    padding: 3.5rem 1rem;
   }
 
   .hero-actions,
