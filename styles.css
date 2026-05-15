@@ -1087,6 +1087,37 @@ body:not([data-theme="dark"]) .about-highlight:hover {
   flex: 1;
 }
 
+.project-card h3 {
+  overflow-wrap: anywhere;
+}
+
+.project-tech-list {
+  list-style: none;
+  margin: 1.1rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+  color: var(--text-soft);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.project-tech-list li {
+  position: relative;
+  padding-left: 0.95rem;
+}
+
+.project-tech-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 0.34rem;
+  height: 0.34rem;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
 .project-card a,
 .document-links a,
 .contact-link {
