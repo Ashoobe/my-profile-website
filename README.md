@@ -38,7 +38,7 @@ You can open `index.html` directly in a browser, or serve the folder locally wit
 
 ## Notes
 
-- The repository is currently private.
+- The repository is public and publishes this portfolio through GitHub Pages.
 - Sensitive academic information such as the degree audit is intentionally excluded from version control.
 - The content and styling were refined to support both dark mode and light mode with stronger readability and accessible contrast.
 

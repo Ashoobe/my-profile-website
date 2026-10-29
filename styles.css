@@ -111,6 +111,8 @@ html {
 
 body {
   margin: 0;
+  /* Clip decorative full-width backgrounds without changing the page layout. */
+  overflow-x: clip;
   font-size: 17.5px;
   background:
     radial-gradient(circle at top right, var(--section-glow), transparent 26%),
