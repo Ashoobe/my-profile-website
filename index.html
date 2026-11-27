@@ -9,6 +9,23 @@
     />
     <title>Hlay Aliotte | IT Administrator & Computer Science Portfolio</title>
     <link rel="stylesheet" href="styles.css?v=1323c2db" />
+    <style>
+      .workplace-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
+      .workplace-card { scroll-margin-top: 6rem; }
+      .workplace-card p { max-width: 62ch; }
+      .workplace-details { margin-top: 1.15rem; padding-top: 0.65rem; border-top: 1px solid var(--border); }
+      .workplace-details summary { color: var(--text); font-weight: 700; cursor: pointer; min-height: 44px; padding-block: 0.55rem; }
+      .workplace-details summary:hover { text-decoration: underline; text-underline-offset: 0.2em; }
+      .workplace-details summary:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+      .workplace-details dl { margin: 0.5rem 0 0; line-height: 1.6; }
+      .workplace-details dt { font-weight: 700; color: var(--text); }
+      .workplace-details dd { margin: 0.2rem 0 0.85rem; color: var(--text-soft); }
+      .workplace-details dd:last-child { margin-bottom: 0; }
+      .other-projects { margin-top: 1.5rem; }
+      @media (max-width: 780px) {
+        .workplace-grid { grid-template-columns: minmax(0, 1fr); }
+      }
+    </style>
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>
@@ -354,61 +371,81 @@
           <h2>Work projects, client websites, and academic applications.</h2>
         </div>
 
-        <div class="project-grid">
-          <article class="project-card reveal">
+        <div class="project-grid workplace-grid" role="group" aria-label="Workplace case studies">
+          <article class="project-card workplace-card reveal" id="sharepoint-teams">
             <p class="project-kicker">Oak Brook Park District / Workplace project</p>
             <h3>SharePoint and Teams Integration</h3>
-            <p>
-              I helped move departmental files to SharePoint Online and OneDrive, standardize
-              folder structures and access, and train staff to find and share files from desktop
-              and mobile devices.
-            </p>
-            <ul class="project-tech-list">
-              <li>SharePoint Online, Microsoft Teams, OneDrive</li>
-              <li>Department access, document organization, and staff training</li>
-            </ul>
+            <p>I helped move departmental files into Microsoft 365 and gave staff a consistent way to find, access, and share their documents.</p>
+            <ul class="project-tech-list"><li>SharePoint Online, Microsoft Teams, OneDrive</li></ul>
+            <details class="workplace-details">
+              <summary>Read case study<span class="sr-only">: SharePoint and Teams Integration</span></summary>
+              <dl>
+                <dt>The challenge</dt>
+                <dd>Departments needed a common folder structure and access to the right documents, whether staff were working from a computer or a phone.</dd>
+                <dt>My role</dt>
+                <dd>I helped migrate departmental files to SharePoint Online and OneDrive, standardize folder structures, and organize access around each department’s needs. I trained staff to find documents on desktop and mobile and to share them directly from SharePoint.</dd>
+                <dt>What changed</dt>
+                <dd>Departments had a common folder structure and appropriate access. Staff could find and share documents from desktop and mobile using the same process.</dd>
+              </dl>
+            </details>
           </article>
 
-          <article class="project-card reveal">
+          <article class="project-card workplace-card reveal" id="digital-membership">
             <p class="project-kicker">Oak Brook Park District / Workplace application</p>
             <h3>Digital Membership Cards</h3>
-            <p>
-              I built a staff application to issue and resend digital membership cards.
-              Staff can import member records in batches and correct validation errors
-              in the import dashboard.
-            </p>
-            <ul class="project-tech-list">
-              <li>Power Apps, Power Automate, SharePoint, Azure</li>
-              <li>Apple Wallet and Google Wallet support</li>
-            </ul>
+            <p>I built a staff app for importing member records and issuing digital passes that members can add to Apple Wallet or Google Wallet.</p>
+            <ul class="project-tech-list"><li>Power Apps, Power Automate, SharePoint, Azure</li></ul>
+            <details class="workplace-details">
+              <summary>Read case study<span class="sr-only">: Digital Membership Cards</span></summary>
+              <dl>
+                <dt>The challenge</dt>
+                <dd>The previous pass delivery process could be interrupted by email delivery problems. Staff also needed a way to fix individual import errors without holding up an entire batch.</dd>
+                <dt>What I built</dt>
+                <dd>I connected a Power Apps interface to SharePoint records and Power Automate workflows, with Azure supporting pass generation. The import workflow checks for missing emails, missing pass numbers, and duplicate records. Valid records can proceed while staff review and correct flagged rows.</dd>
+                <dt>How staff use it</dt>
+                <dd>Staff can create and resend passes. Each barcode uses the existing membership number. Regular memberships have no set expiry, while seasonal passes use a manager-set season end date.</dd>
+              </dl>
+            </details>
           </article>
 
-          <article class="project-card reveal">
+          <article class="project-card workplace-card reveal" id="photo-library">
             <p class="project-kicker">Oak Brook Park District / Workplace application</p>
             <h3>Photo Library Admin Dashboard</h3>
-            <p>
-              I built an internal dashboard for organizing photos and videos in SharePoint.
-              I added automation to keep file location metadata in sync when staff move folders.
-            </p>
-            <ul class="project-tech-list">
-              <li>Power Apps, Power Automate, SharePoint</li>
-              <li>Media organization, folder moves, and metadata updates</li>
-            </ul>
+            <p>I built an internal dashboard for a SharePoint photo and video library, with automation that keeps file metadata accurate when folders move.</p>
+            <ul class="project-tech-list"><li>Power Apps, Power Automate, SharePoint</li></ul>
+            <details class="workplace-details">
+              <summary>Read case study<span class="sr-only">: Photo Library Admin Dashboard</span></summary>
+              <dl>
+                <dt>The challenge</dt>
+                <dd>When staff moved a folder, the files moved too, but metadata based on the files’ old location could stay behind. That made the library harder to organize and maintain.</dd>
+                <dt>What I built</dt>
+                <dd>I added automation to update location-related metadata on the files inside a moved SharePoint folder, rather than requiring staff to edit each item. The dashboard gives administrators one place to manage photos and videos.</dd>
+                <dt>Why it matters</dt>
+                <dd>Staff can reorganize the library without leaving files associated with the wrong location. The dashboard, SharePoint library, and automation are separate pieces, so changes to the interface don’t have to change the underlying filing rules.</dd>
+              </dl>
+            </details>
           </article>
 
-          <article class="project-card reveal">
+          <article class="project-card workplace-card reveal" id="facilities-apps">
             <p class="project-kicker">Oak Brook Park District / Workplace applications</p>
             <h3>Custodial and Maintenance Apps</h3>
-            <p>
-              I built internal apps to help facilities teams assign and track work.
-              Staff can see what’s assigned to them, and managers can review progress in dashboards.
-            </p>
-            <ul class="project-tech-list">
-              <li>Power Apps and SharePoint</li>
-              <li>Task assignments, completion tracking, and manager views</li>
-            </ul>
+            <p>I built internal apps that give facilities staff a daily view of assigned work and managers a separate view of progress across locations.</p>
+            <ul class="project-tech-list"><li>Power Apps, SharePoint</li></ul>
+            <details class="workplace-details">
+              <summary>Read case study<span class="sr-only">: Custodial and Maintenance Apps</span></summary>
+              <dl>
+                <dt>The challenge</dt>
+                <dd>Staff needed a clear list of tasks to complete at each facility. Managers needed to see assignments and follow up without working through the same screen as the crew.</dd>
+                <dt>What I built</dt>
+                <dd>I separated staff and manager views and designed the workflow around locations, task status, and completion tracking. I also worked on tying assignment photos to the relevant task so managers could review them in context.</dd>
+                <dt>Design decisions</dt>
+                <dd>I sized the staff screens for tablets in the field and kept the desktop layout more compact. I also worked on translation for assignment content and staff notes so both groups could work in their preferred language.</dd>
+              </dl>
+            </details>
           </article>
+        </div>
 
+        <div class="project-grid other-projects" role="group" aria-label="Client and academic projects">
           <article class="project-card reveal">
             <p class="project-kicker">Undergraduate Capstone / Volunteer coordination</p>
             <h3>Volunteer Platform</h3>
