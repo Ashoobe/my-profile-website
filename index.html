@@ -25,6 +25,7 @@
       .project-method { margin-top: 1.5rem; }
       .project-method p:not(.project-kicker) { max-width: 76ch; }
       .project-method p:not(.project-kicker) + p { margin-top: 0.7rem; }
+      .project-card .client-site-link { margin-top: 0.95rem; }
       .other-projects { margin-top: 1.5rem; }
       @media (max-width: 780px) {
         .workplace-grid { grid-template-columns: minmax(0, 1fr); }
@@ -521,6 +522,32 @@
         </section>
 
         <div class="project-grid other-projects" role="group" aria-label="Client and academic projects">
+          <article class="project-card workplace-card reveal" id="albert-manick">
+            <p class="project-kicker">Client website / Author and artist</p>
+            <h3>Albert Manick: Author and Artist Website</h3>
+            <p>I redesigned Albert Manick’s existing Django website and built a custom publishing dashboard so readers can explore his work and he can update the site himself.</p>
+            <ul class="project-tech-list">
+              <li>Python, Django, MySQL, Tiptap</li>
+              <li>Django templates, HTML, CSS, JavaScript, PythonAnywhere</li>
+            </ul>
+            <details class="workplace-details">
+              <summary>Read case study<span class="sr-only">: Albert Manick</span></summary>
+              <dl>
+                <dt>Serialized stories</dt>
+                <dd>Manick’s eight-part series, <cite>When Dr Lecter meets the Joker</cite>, used to appear as separate posts with the newest first. I brought the installments together under one title with a table of contents and next-part links, while preserving the original URLs. When Manick publishes Part 9, the contents update automatically and Part 8 links to it.</dd>
+                <dt>Gallery, poetry, and books</dt>
+                <dd>I redesigned the gallery so visitors can browse paintings and exhibition photos, enlarge an image, and read the artist’s note. The poetry page shows one poem at a time. The book page presents <cite>My Soul Laid Bare... Why Not?</cite> with a three-dimensional cover and links to the Kindle and paperback editions.</dd>
+                <dt>Content Studio</dt>
+                <dd>I customized Django Admin so Manick can manage books, poems, artwork, pages, and blog posts in one place. Tiptap lets him format and preview his writing. He can save draft edits to a published piece without making them public until he’s ready.</dd>
+                <dt>Publishing without redesigning</dt>
+                <dd>Manick chooses Artwork or Exhibition photos when he uploads an image. The site places it in the right collection and applies the gold frame automatically. When he adds an installment, he selects its series and the dashboard assigns the next available part number.</dd>
+                <dt>Implementation and testing</dt>
+                <dd>I used Python, Django, and MySQL for the content models and publishing workflow, and Django templates, HTML, CSS, and JavaScript for responsive layouts. The site is hosted on PythonAnywhere. I tested adding a chapter, moving a photo between categories, and keeping draft edits private through the admin forms.</dd>
+              </dl>
+            </details>
+            <a class="client-site-link" href="https://www.albertmanick.com/" target="_blank" rel="noreferrer">Visit Albert Manick’s website</a>
+          </article>
+
           <article class="project-card reveal">
             <p class="project-kicker">Undergraduate Capstone / Volunteer coordination</p>
             <h3>Volunteer Platform</h3>
