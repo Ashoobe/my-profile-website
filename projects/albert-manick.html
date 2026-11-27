@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How Hlay Aliotte redesigned Albert Manick’s website and built a Django publishing dashboard.">
+  <title>Albert Manick Case Study | Hlay Aliotte</title>
+  <link rel="stylesheet" href="../styles.css?v=1323c2db">
+  <style>
+    .case-page { background: var(--bg); color: var(--text); }
+    .case-wrap { width: min(100% - 2rem, 57rem); margin-inline: auto; }
+    .case-nav { border-bottom: 1px solid var(--border); background: var(--surface); }
+    .case-nav .case-wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .25rem 1.25rem; padding-block: .65rem; }
+    .case-nav a, .case-actions a { display: inline-flex; min-height: 44px; align-items: center; font-weight: 650; color: var(--link-accent); text-decoration: underline; text-underline-offset: .22em; }
+    .case-nav a:hover, .case-actions a:hover { color: var(--text); }
+    .case-main { padding-block: clamp(2rem, 6vw, 5rem); }
+    .case-hero { border-bottom: 1px solid var(--border); padding-bottom: clamp(1.5rem, 3vw, 2.5rem); }
+    .case-hero .project-kicker { color: var(--text-soft); }
+    .case-hero h1 { font-size: clamp(2.25rem, 6vw, 4.75rem); line-height: 1.03; max-width: 15ch; margin: .55rem 0 1rem; }
+    .case-hero .case-intro { color: var(--text-soft); max-width: 62ch; font-size: clamp(1.05rem, 2vw, 1.28rem); line-height: 1.65; }
+    .case-stack { display: flex; flex-wrap: wrap; gap: .45rem; padding: 0; margin: 1.25rem 0 .6rem; list-style: none; }
+    .case-stack li { background: var(--surface-muted); color: var(--text); border: 1px solid var(--border); border-radius: 100px; padding: .28rem .78rem; font-size: .9rem; }
+    .case-actions { display: flex; gap: .5rem 1.4rem; flex-wrap: wrap; }
+    .case-story { margin: 0; padding-top: .5rem; }
+    .case-story section { padding-block: clamp(1.3rem, 3vw, 2rem); border-bottom: 1px solid var(--border); }
+    .case-story h2 { font-size: clamp(1.36rem, 3vw, 1.95rem); line-height: 1.2; margin: 0 0 .65rem; }
+    .case-story p { color: var(--text-soft); max-width: 70ch; line-height: 1.75; margin: 0; }
+    .case-bottom { padding-top: 1.3rem; }
+  </style>
+</head>
+<body class="case-page">
+  <script>
+    try { if (localStorage.getItem("theme") === "dark") document.body.dataset.theme = "dark"; } catch {}
+  </script>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <nav class="case-nav" aria-label="Portfolio">
+    <div class="case-wrap">
+      <a href="../#albert-manick">← Back to projects</a>
+      <a href="../">Hlay Aliotte</a>
+    </div>
+  </nav>
+  <main id="main-content" class="case-wrap case-main">
+    <header class="case-hero">
+      <p class="project-kicker">Client case study / Author and artist</p>
+      <h1>Albert Manick: Author and Artist Website</h1>
+      <p class="case-intro">I redesigned Albert Manick’s existing Django website and built a custom publishing dashboard so readers can explore his work and he can update the site himself.</p>
+      <ul class="case-stack" aria-label="Key technologies">
+        <li>Python</li><li>Django</li><li>MySQL</li><li>Tiptap</li><li>PythonAnywhere</li>
+      </ul>
+      <div class="case-actions"><a href="https://www.albertmanick.com/">Visit Albert Manick’s website</a></div>
+    </header>
+    <div class="case-story">
+      <section>
+        <h2>Serialized stories</h2>
+        <p>Manick’s eight-part series, <cite>When Dr Lecter meets the Joker</cite>, used to appear as separate posts with the newest first. I brought the installments together under one title with a table of contents and next-part links, while preserving the original URLs. When Manick publishes Part 9, the contents update automatically and Part 8 links to it.</p>
+      </section>
+      <section>
+        <h2>Gallery, poetry, and books</h2>
+        <p>I redesigned the gallery so visitors can browse paintings and exhibition photos, enlarge an image, and read the artist’s note. The poetry page shows one poem at a time. The book page presents <cite>My Soul Laid Bare... Why Not?</cite> with a three-dimensional cover and links to the Kindle and paperback editions.</p>
+      </section>
+      <section>
+        <h2>Content Studio</h2>
+        <p>I customized Django Admin so Manick can manage books, poems, artwork, pages, and blog posts in one place. Tiptap lets him format and preview his writing. He can save draft edits to a published piece without making them public until he’s ready.</p>
+      </section>
+      <section>
+        <h2>Publishing without redesigning</h2>
+        <p>Manick chooses Artwork or Exhibition photos when he uploads an image. The site places it in the right collection and applies the gold frame automatically. When he adds an installment, he selects its series and the dashboard assigns the next available part number.</p>
+      </section>
+      <section>
+        <h2>Implementation and testing</h2>
+        <p>I used Python, Django, and MySQL for the content models and publishing workflow, and Django templates, HTML, CSS, and JavaScript for responsive layouts. The site is hosted on PythonAnywhere. I tested adding a chapter, moving a photo between categories, and keeping draft edits private through the admin forms.</p>
+      </section>
+    </div>
+    <div class="case-actions case-bottom"><a href="../#albert-manick">← Back to projects</a></div>
+  </main>
+</body>
+</html>
