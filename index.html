@@ -13,14 +13,6 @@
       .workplace-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
       .workplace-card { scroll-margin-top: 6rem; }
       .workplace-card p { max-width: 62ch; }
-      .workplace-details { margin-top: 1.15rem; padding-top: 0.65rem; border-top: 1px solid var(--border); }
-      .workplace-details summary { color: var(--text); font-weight: 700; cursor: pointer; min-height: 44px; padding-block: 0.55rem; }
-      .workplace-details summary:hover { text-decoration: underline; text-underline-offset: 0.2em; }
-      .workplace-details summary:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
-      .workplace-details dl { margin: 0.5rem 0 0; line-height: 1.6; }
-      .workplace-details dt { font-weight: 700; color: var(--text); }
-      .workplace-details dd { margin: 0.2rem 0 0.85rem; color: var(--text-soft); }
-      .workplace-details dd:last-child { margin-bottom: 0; }
       .projects-intro { max-width: 76ch; color: var(--text-soft); margin: 0 0 1.5rem; }
       .project-method { margin-top: 1.5rem; }
       .project-method p:not(.project-kicker) { max-width: 76ch; }
@@ -30,19 +22,19 @@
       @media (max-width: 780px) {
         .workplace-grid { grid-template-columns: minmax(0, 1fr); }
       }
-      .manick-case-trigger { align-self: flex-start; margin-top: .65rem; min-height: 44px; border: 0; padding: .2rem 0; background: transparent; font: inherit; font-weight: 650; color: var(--link-accent); cursor: pointer; text-align: left; text-decoration: underline; text-underline-offset: .18em; }
-      .manick-case-trigger:hover { color: var(--text); }
-      #manick-case { position: fixed; inset: 0; margin: auto; width: min(48rem, calc(100% - 2rem)); max-width: none; max-height: calc(100% - 2rem); max-height: calc(100dvh - 2rem); padding: 0; overflow: auto; overscroll-behavior: contain; border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface); color: var(--text); box-shadow: var(--shadow-lift); }
-      #manick-case::backdrop { background: rgba(11, 17, 24, .67); }
-      .manick-case-header { position: sticky; top: 0; z-index: 1; display: flex; align-items: flex-start; justify-content: space-between; gap: .75rem; padding: clamp(.85rem, 3vw, 1.4rem); background: var(--surface); border-bottom: 1px solid var(--border); }
-      .manick-case-header h2 { font-size: clamp(1.25rem, 3vw, 1.85rem); margin: 0; line-height: 1.2; }
-      .manick-case-close { min-height: 44px; padding: .4rem .75rem; border: 1px solid var(--border); border-radius: .6rem; background: var(--surface-muted); color: var(--text); font: inherit; font-weight: 650; cursor: pointer; }
-      .manick-case-close:hover { border-color: var(--link-accent); }
-      .manick-case-body { padding: clamp(1rem, 4vw, 1.75rem); }
-      .manick-case-body section + section { margin-top: 1.3rem; padding-top: 1.3rem; border-top: 1px solid var(--border); }
-      .manick-case-body h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); margin: 0 0 .4rem; }
-      .manick-case-body p { margin: 0; color: var(--text-soft); line-height: 1.65; }
-      .manick-case-site { display: inline-block; margin-top: 1.4rem; color: var(--link-accent); font-weight: 650; text-decoration: underline; text-underline-offset: .18em; }
+      .project-case-trigger { align-self: flex-start; margin-top: .65rem; min-height: 44px; border: 0; padding: .2rem 0; background: transparent; font: inherit; font-weight: 650; color: var(--link-accent); cursor: pointer; text-align: left; text-decoration: underline; text-underline-offset: .18em; }
+      .project-case-trigger:hover { color: var(--text); }
+      .project-case { position: fixed; inset: 0; margin: auto; width: min(48rem, calc(100% - 2rem)); max-width: none; max-height: calc(100% - 2rem); max-height: calc(100dvh - 2rem); padding: 0; overflow: auto; overscroll-behavior: contain; border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface); color: var(--text); box-shadow: var(--shadow-lift); }
+      .project-case::backdrop { background: rgba(11, 17, 24, .67); }
+      .project-case-header { position: sticky; top: 0; z-index: 1; display: flex; align-items: flex-start; justify-content: space-between; gap: .75rem; padding: clamp(.85rem, 3vw, 1.4rem); background: var(--surface); border-bottom: 1px solid var(--border); }
+      .project-case-header h2 { font-size: clamp(1.25rem, 3vw, 1.85rem); margin: 0; line-height: 1.2; }
+      .project-case-close { min-height: 44px; padding: .4rem .75rem; border: 1px solid var(--border); border-radius: .6rem; background: var(--surface-muted); color: var(--text); font: inherit; font-weight: 650; cursor: pointer; }
+      .project-case-close:hover { border-color: var(--link-accent); }
+      .project-case-body { padding: clamp(1rem, 4vw, 1.75rem); }
+      .project-case-body section + section { margin-top: 1.3rem; padding-top: 1.3rem; border-top: 1px solid var(--border); }
+      .project-case-body h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); margin: 0 0 .4rem; }
+      .project-case-body p { margin: 0; color: var(--text-soft); line-height: 1.65; }
+      .project-case-site { display: inline-block; margin-top: 1.4rem; color: var(--link-accent); font-weight: 650; text-decoration: underline; text-underline-offset: .18em; }
     </style>
   </head>
   <body>
@@ -403,17 +395,7 @@
             <h3>SharePoint and Teams Integration</h3>
             <p>I helped move departmental files into Microsoft 365 and gave staff a consistent way to find, access, and share their documents.</p>
             <ul class="project-tech-list"><li>SharePoint Online, Microsoft Teams, OneDrive</li></ul>
-            <details class="workplace-details">
-              <summary>Read case study<span class="sr-only">: SharePoint and Teams Integration</span></summary>
-              <dl>
-                <dt>The challenge</dt>
-                <dd>Departments needed a common folder structure and access to the right documents, whether staff were working from a computer or a phone.</dd>
-                <dt>My role</dt>
-                <dd>I helped migrate departmental files to SharePoint Online and OneDrive, standardize folder structures, and organize access around each department’s needs. I trained staff to find documents on desktop and mobile and to share them directly from SharePoint.</dd>
-                <dt>What changed</dt>
-                <dd>Departments had a common folder structure and appropriate access. Staff could find and share documents from desktop and mobile using the same process.</dd>
-              </dl>
-            </details>
+            <button type="button" class="project-case-trigger" aria-haspopup="dialog" aria-controls="case-sharepoint-teams" aria-label="Read case study: SharePoint and Teams Integration">Read case study</button>
           </article>
 
           <article class="project-card workplace-card reveal" id="digital-membership">
@@ -421,19 +403,7 @@
             <h3>Digital Membership Cards</h3>
             <p>I built a staff app that takes an ActiveNet export through validation and email delivery, so members can add their cards to Apple Wallet or Google Wallet.</p>
             <ul class="project-tech-list"><li>Power Apps, Power Automate, SharePoint Online, Node.js, Azure Functions</li></ul>
-            <details class="workplace-details">
-              <summary>Read case study<span class="sr-only">: Digital Membership Cards</span></summary>
-              <dl>
-                <dt>The challenge</dt>
-                <dd>When a member called about a missing card, staff needed to know whether the record had been imported, whether a card had been created, and what happened to the email.</dd>
-                <dt>Data and workflow</dt>
-                <dd>I organized the data across 15 SharePoint lists and a document library. Each upload has a batch ID, and each row gets a validation result. Staff can correct a missing pass number or invalid email without holding back valid rows. A member ID links the record to its passes and delivery attempts.</dd>
-                <dt>Wallet and delivery integration</dt>
-                <dd>Node.js functions parse CSV and Excel exports, generate signed Apple Wallet passes and Google Wallet cards, and encode the existing membership number as a Code 128 barcode. A separate delivery check is designed to use Exchange message trace to distinguish a send attempt from delivery to the receiving mail server.</dd>
-                <dt>How staff use it</dt>
-                <dd>Staff can search by pass number, review and correct imports, and resend cards. Managers can update the card design and set the season end date for Splash Island passes. Oak Brook memberships can be issued without an expiration date. The front desk can keep scanning the existing membership number.</dd>
-              </dl>
-            </details>
+            <button type="button" class="project-case-trigger" aria-haspopup="dialog" aria-controls="case-digital-membership" aria-label="Read case study: Digital Membership Cards">Read case study</button>
           </article>
 
           <article class="project-card workplace-card reveal" id="photo-library">
@@ -441,19 +411,7 @@
             <h3>Photo Library Admin Dashboard</h3>
             <p>I built a SharePoint-backed dashboard for uploading, organizing, and reviewing district photos and videos.</p>
             <ul class="project-tech-list"><li>Power Apps, Power Automate, SharePoint Online</li></ul>
-            <details class="workplace-details">
-              <summary>Read case study<span class="sr-only">: Photo Library Admin Dashboard</span></summary>
-              <dl>
-                <dt>The challenge</dt>
-                <dd>Large videos could appear in the library before they finished uploading. Moving a folder could also leave its files named for their old location.</dd>
-                <dt>Data and review</dt>
-                <dd>I separated the media library from lists that track upload requests, approved destinations, and dashboard summaries. I kept the original filename alongside the managed name, so reviewers can trace an upload and compare a suspected duplicate with the earlier file before choosing which copy to keep.</dd>
-                <dt>Automation</dt>
-                <dd>Power Automate checks the destination and uses file size, modification time, and checkout status to assess whether a video is ready. File naming uses the folder path and SharePoint file ID. A scheduled flow updates affected filenames in place after a folder moves, and a separate flow calculates dashboard totals in batches.</dd>
-                <dt>What changed</dt>
-                <dd>Staff can reorganize collections without renaming files one by one. Reviewers can inspect potentially duplicate uploads before anything is removed.</dd>
-              </dl>
-            </details>
+            <button type="button" class="project-case-trigger" aria-haspopup="dialog" aria-controls="case-photo-library" aria-label="Read case study: Photo Library Admin Dashboard">Read case study</button>
           </article>
 
           <article class="project-card workplace-card reveal" id="facilities-apps">
@@ -461,17 +419,7 @@
             <h3>Custodial Operations App</h3>
             <p>I built a bilingual checklist app that gives custodians a tablet-friendly view of their work and managers a separate place to plan and review it.</p>
             <ul class="project-tech-list"><li>Power Apps, Power Fx, SharePoint Online, Microsoft Translator</li></ul>
-            <details class="workplace-details">
-              <summary>Read case study<span class="sr-only">: Custodial Operations App</span></summary>
-              <dl>
-                <dt>The challenge</dt>
-                <dd>A manager needs to create checklists and assign shifts by site. A custodian on an iPad needs to open an assignment, answer a question, take a photo, and move on.</dd>
-                <dt>Data and workflow</dt>
-                <dd>SharePoint stores checklist templates and versions, assignments, submissions, and answers. I tied each photo to the answer it documents. A manager can trace it back to the checklist item, submission, and assignment without relying on the filename.</dd>
-                <dt>Interface</dt>
-                <dd>I built separate views with larger touch controls for tablets and a more compact desktop layout. Microsoft Translator lets employees use English or Spanish checklist content while managers maintain a shared checklist across facilities. The app also records inventory transactions so managers can review supply activity.</dd>
-              </dl>
-            </details>
+            <button type="button" class="project-case-trigger" aria-haspopup="dialog" aria-controls="case-facilities-apps" aria-label="Read case study: Custodial Operations App">Read case study</button>
           </article>
 
           <article class="project-card workplace-card reveal" id="maintenance-hub">
@@ -479,17 +427,7 @@
             <h3>Maintenance Hub</h3>
             <p>I built an app that takes a facility request into the technician’s workflow while keeping the location, photos, comments, and status history together.</p>
             <ul class="project-tech-list"><li>Power Apps, SharePoint Online, Power Automate, Microsoft 365 Outlook</li></ul>
-            <details class="workplace-details">
-              <summary>Read case study<span class="sr-only">: Maintenance Hub</span></summary>
-              <dl>
-                <dt>Data design</dt>
-                <dd>A ticket ID connects the request to its comments and status changes. The Maintenance Hub and Custodial app use the same facility directory. I kept recurring service plans separate from individual service records so the team can see what was planned and what was completed.</dd>
-                <dt>Visibility and workflow</dt>
-                <dd>I separated internal technician notes from updates intended for requesters. When a status change or public comment needs an email, the app adds it to a SharePoint outbox, and Power Automate processes it through Outlook.</dd>
-                <dt>Why it matters</dt>
-                <dd>Technicians get the context they need to work a ticket, requesters see updates relevant to them, and IT has a record to check if a notification is missing.</dd>
-              </dl>
-            </details>
+            <button type="button" class="project-case-trigger" aria-haspopup="dialog" aria-controls="case-maintenance-hub" aria-label="Read case study: Maintenance Hub">Read case study</button>
           </article>
 
           <article class="project-card workplace-card reveal" id="friday">
@@ -497,17 +435,7 @@
             <h3>FRIDAY: Team Assignments and Recurring Work</h3>
             <p>I built an app that gives employees a personal view of their assignments and lets managers track recurring work without losing the history of each task.</p>
             <ul class="project-tech-list"><li>Power Apps, Power Automate, SharePoint Online</li></ul>
-            <details class="workplace-details">
-              <summary>Read case study<span class="sr-only">: FRIDAY: Team Assignments and Recurring Work</span></summary>
-              <dl>
-                <dt>Data design</dt>
-                <dd>I separated a recurring task series from its individual tasks. Each task has its own ID and keeps its assignees, checklist, messages, issues, activity, and attachments. Team membership is stored separately so managers can assign work to people on the selected team.</dd>
-                <dt>Automation</dt>
-                <dd>The app uses Power Automate to load assignments, save progress, manage teams, and export reports. Other flows handle reminders, notifications, and request routing.</dd>
-                <dt>How staff use it</dt>
-                <dd>An employee sees what to do next, even when a task has multiple assignees. A manager can open an individual occurrence to see who owned it, what was completed, and what needs follow-up.</dd>
-              </dl>
-            </details>
+            <button type="button" class="project-case-trigger" aria-haspopup="dialog" aria-controls="case-friday" aria-label="Read case study: FRIDAY: Team Assignments and Recurring Work">Read case study</button>
           </article>
         </div>
 
@@ -543,43 +471,37 @@
               <li>Python, Django, MySQL, Tiptap</li>
               <li>Django templates, HTML, CSS, JavaScript, PythonAnywhere</li>
             </ul>
-            <button type="button" class="manick-case-trigger" id="manick-case-trigger" aria-haspopup="dialog" aria-controls="manick-case" aria-label="Read case study: Albert Manick">Read case study</button>
+            <button type="button" class="project-case-trigger" aria-haspopup="dialog" aria-controls="case-albert-manick" aria-label="Read case study: Albert Manick">Read case study</button>
             <a class="client-site-link" href="https://www.albertmanick.com/" target="_blank" rel="noreferrer">Visit Albert Manick’s website</a>
           </article>
 
-          <article class="project-card reveal">
+          <article class="project-card workplace-card reveal" id="volunteer-platform">
             <p class="project-kicker">Undergraduate Capstone / Volunteer coordination</p>
             <h3>Volunteer Platform</h3>
             <p>
               Built a responsive web application that helps volunteers discover organizations,
               review service opportunities, and connect with causes that need support.
             </p>
-            <ul class="project-tech-list">
-              <li>React, Node.js, Firebase</li>
-              <li>Volunteer discovery, organization listings, and responsive page layouts</li>
-              <li>Designed for clearer access to community service opportunities</li>
-            </ul>
-            <a href="https://volunteer-project-e97cb.web.app/" target="_blank" rel="noreferrer">
+            <ul class="project-tech-list"><li>React, Node.js, Firebase</li></ul>
+            <button type="button" class="project-case-trigger" aria-haspopup="dialog" aria-controls="case-volunteer-platform" aria-label="Read case study: Volunteer Platform">Read case study</button>
+            <a class="client-site-link" href="https://volunteer-project-e97cb.web.app/" target="_blank" rel="noreferrer">
               Visit live project
             </a>
           </article>
 
-          <article class="project-card reveal">
+          <article class="project-card workplace-card reveal" id="mqs-hvac">
             <p class="project-kicker">Business website / Responsive web delivery</p>
             <h3>MQS HVAC Website</h3>
             <p>
               Built a business-facing website to improve service presentation, content structure,
               and customer access for an HVAC company.
             </p>
-            <ul class="project-tech-list">
-              <li>Wix, responsive web design, SEO</li>
-              <li>Service pages, business information, and contact-focused navigation</li>
-              <li>Structured to support local visibility and professional credibility</li>
-            </ul>
-            <a href="https://www.mqshvac.com/" target="_blank" rel="noreferrer">View website</a>
+            <ul class="project-tech-list"><li>Wix, responsive web design, SEO</li></ul>
+            <button type="button" class="project-case-trigger" aria-haspopup="dialog" aria-controls="case-mqs-hvac" aria-label="Read case study: MQS HVAC Website">Read case study</button>
+            <a class="client-site-link" href="https://www.mqshvac.com/" target="_blank" rel="noreferrer">View website</a>
           </article>
 
-          <article class="project-card reveal">
+          <article class="project-card workplace-card reveal" id="disaster-relief">
             <p class="project-kicker">Master's Capstone / Disaster response system</p>
             <h3>Disaster Relief Resource Coordination System (DRRCS)</h3>
             <p>
@@ -587,12 +509,9 @@
               could submit, track, assign, and manage emergency relief requests. This academic demo
               is not an emergency service.
             </p>
-            <ul class="project-tech-list">
-              <li>React, Vite, Tailwind CSS, Material UI</li>
-              <li>Java 17, Spring Boot, Spring Security, JWT, REST APIs, OpenAPI/Swagger</li>
-              <li>MongoDB, Redis, Apache Kafka, Docker Compose</li>
-            </ul>
-            <a href="https://disaster-relief-resource-coordinati.vercel.app/" target="_blank" rel="noreferrer">
+            <ul class="project-tech-list"><li>React, Spring Boot, MongoDB, Redis, Kafka, Docker</li></ul>
+            <button type="button" class="project-case-trigger" aria-haspopup="dialog" aria-controls="case-disaster-relief" aria-label="Read case study: Disaster Relief Resource Coordination System (DRRCS)">Read case study</button>
+            <a class="client-site-link" href="https://disaster-relief-resource-coordinati.vercel.app/" target="_blank" rel="noreferrer">
               View academic demo
             </a>
           </article>
@@ -754,12 +673,146 @@
     </footer>
 
     <script src="script.js"></script>
-    <dialog id="manick-case" aria-labelledby="manick-case-title">
-      <div class="manick-case-header">
-        <h2 id="manick-case-title">Albert Manick: Author and Artist Website</h2>
-        <form method="dialog"><button class="manick-case-close" type="submit" autofocus>Close</button></form>
+    <dialog id="case-sharepoint-teams" class="project-case" aria-labelledby="case-sharepoint-teams-title">
+      <div class="project-case-header">
+        <h2 id="case-sharepoint-teams-title">SharePoint and Teams Integration</h2>
+        <form method="dialog"><button class="project-case-close" type="submit" autofocus>Close</button></form>
       </div>
-      <div class="manick-case-body">
+      <div class="project-case-body">
+        <section>
+          <h3>The challenge</h3>
+          <p>Departments needed a common folder structure and access to the right documents, whether staff were working from a computer or a phone.</p>
+        </section>
+        <section>
+          <h3>My role</h3>
+          <p>I helped migrate departmental files to SharePoint Online and OneDrive, standardize folder structures, and organize access around each department’s needs. I trained staff to find documents on desktop and mobile and to share them directly from SharePoint.</p>
+        </section>
+        <section>
+          <h3>What changed</h3>
+          <p>Departments had a common folder structure and appropriate access. Staff could find and share documents from desktop and mobile using the same process.</p>
+        </section>
+      </div>
+    </dialog>
+
+    <dialog id="case-digital-membership" class="project-case" aria-labelledby="case-digital-membership-title">
+      <div class="project-case-header">
+        <h2 id="case-digital-membership-title">Digital Membership Cards</h2>
+        <form method="dialog"><button class="project-case-close" type="submit" autofocus>Close</button></form>
+      </div>
+      <div class="project-case-body">
+        <section>
+          <h3>The challenge</h3>
+          <p>When a member called about a missing card, staff needed to know whether the record had been imported, whether a card had been created, and what happened to the email.</p>
+        </section>
+        <section>
+          <h3>Data and workflow</h3>
+          <p>I organized the data across 15 SharePoint lists and a document library. Each upload has a batch ID, and each row gets a validation result. Staff can correct a missing pass number or invalid email without holding back valid rows. A member ID links the record to its passes and delivery attempts.</p>
+        </section>
+        <section>
+          <h3>Wallet and delivery integration</h3>
+          <p>Node.js functions parse CSV and Excel exports, generate signed Apple Wallet passes and Google Wallet cards, and encode the existing membership number as a Code 128 barcode. A separate delivery check is designed to use Exchange message trace to distinguish a send attempt from delivery to the receiving mail server.</p>
+        </section>
+        <section>
+          <h3>How staff use it</h3>
+          <p>Staff can search by pass number, review and correct imports, and resend cards. Managers can update the card design and set the season end date for Splash Island passes. Oak Brook memberships can be issued without an expiration date. The front desk can keep scanning the existing membership number.</p>
+        </section>
+      </div>
+    </dialog>
+
+    <dialog id="case-photo-library" class="project-case" aria-labelledby="case-photo-library-title">
+      <div class="project-case-header">
+        <h2 id="case-photo-library-title">Photo Library Admin Dashboard</h2>
+        <form method="dialog"><button class="project-case-close" type="submit" autofocus>Close</button></form>
+      </div>
+      <div class="project-case-body">
+        <section>
+          <h3>The challenge</h3>
+          <p>Large videos could appear in the library before they finished uploading. Moving a folder could also leave its files named for their old location.</p>
+        </section>
+        <section>
+          <h3>Data and review</h3>
+          <p>I separated the media library from lists that track upload requests, approved destinations, and dashboard summaries. I kept the original filename alongside the managed name, so reviewers can trace an upload and compare a suspected duplicate with the earlier file before choosing which copy to keep.</p>
+        </section>
+        <section>
+          <h3>Automation</h3>
+          <p>Power Automate checks the destination and uses file size, modification time, and checkout status to assess whether a video is ready. File naming uses the folder path and SharePoint file ID. A scheduled flow updates affected filenames in place after a folder moves, and a separate flow calculates dashboard totals in batches.</p>
+        </section>
+        <section>
+          <h3>What changed</h3>
+          <p>Staff can reorganize collections without renaming files one by one. Reviewers can inspect potentially duplicate uploads before anything is removed.</p>
+        </section>
+      </div>
+    </dialog>
+
+    <dialog id="case-facilities-apps" class="project-case" aria-labelledby="case-facilities-apps-title">
+      <div class="project-case-header">
+        <h2 id="case-facilities-apps-title">Custodial Operations App</h2>
+        <form method="dialog"><button class="project-case-close" type="submit" autofocus>Close</button></form>
+      </div>
+      <div class="project-case-body">
+        <section>
+          <h3>The challenge</h3>
+          <p>A manager needs to create checklists and assign shifts by site. A custodian on an iPad needs to open an assignment, answer a question, take a photo, and move on.</p>
+        </section>
+        <section>
+          <h3>Data and workflow</h3>
+          <p>SharePoint stores checklist templates and versions, assignments, submissions, and answers. I tied each photo to the answer it documents. A manager can trace it back to the checklist item, submission, and assignment without relying on the filename.</p>
+        </section>
+        <section>
+          <h3>Interface</h3>
+          <p>I built separate views with larger touch controls for tablets and a more compact desktop layout. Microsoft Translator lets employees use English or Spanish checklist content while managers maintain a shared checklist across facilities. The app also records inventory transactions so managers can review supply activity.</p>
+        </section>
+      </div>
+    </dialog>
+
+    <dialog id="case-maintenance-hub" class="project-case" aria-labelledby="case-maintenance-hub-title">
+      <div class="project-case-header">
+        <h2 id="case-maintenance-hub-title">Maintenance Hub</h2>
+        <form method="dialog"><button class="project-case-close" type="submit" autofocus>Close</button></form>
+      </div>
+      <div class="project-case-body">
+        <section>
+          <h3>Data design</h3>
+          <p>A ticket ID connects the request to its comments and status changes. The Maintenance Hub and Custodial app use the same facility directory. I kept recurring service plans separate from individual service records so the team can see what was planned and what was completed.</p>
+        </section>
+        <section>
+          <h3>Visibility and workflow</h3>
+          <p>I separated internal technician notes from updates intended for requesters. When a status change or public comment needs an email, the app adds it to a SharePoint outbox, and Power Automate processes it through Outlook.</p>
+        </section>
+        <section>
+          <h3>Why it matters</h3>
+          <p>Technicians get the context they need to work a ticket, requesters see updates relevant to them, and IT has a record to check if a notification is missing.</p>
+        </section>
+      </div>
+    </dialog>
+
+    <dialog id="case-friday" class="project-case" aria-labelledby="case-friday-title">
+      <div class="project-case-header">
+        <h2 id="case-friday-title">FRIDAY: Team Assignments and Recurring Work</h2>
+        <form method="dialog"><button class="project-case-close" type="submit" autofocus>Close</button></form>
+      </div>
+      <div class="project-case-body">
+        <section>
+          <h3>Data design</h3>
+          <p>I separated a recurring task series from its individual tasks. Each task has its own ID and keeps its assignees, checklist, messages, issues, activity, and attachments. Team membership is stored separately so managers can assign work to people on the selected team.</p>
+        </section>
+        <section>
+          <h3>Automation</h3>
+          <p>The app uses Power Automate to load assignments, save progress, manage teams, and export reports. Other flows handle reminders, notifications, and request routing.</p>
+        </section>
+        <section>
+          <h3>How staff use it</h3>
+          <p>An employee sees what to do next, even when a task has multiple assignees. A manager can open an individual occurrence to see who owned it, what was completed, and what needs follow-up.</p>
+        </section>
+      </div>
+    </dialog>
+
+    <dialog id="case-albert-manick" class="project-case" aria-labelledby="case-albert-manick-title">
+      <div class="project-case-header">
+        <h2 id="case-albert-manick-title">Albert Manick: Author and Artist Website</h2>
+        <form method="dialog"><button class="project-case-close" type="submit" autofocus>Close</button></form>
+      </div>
+      <div class="project-case-body">
       <section>
         <h3>Serialized stories</h3>
         <p>Manick’s eight-part series, <cite>When Dr Lecter meets the Joker</cite>, used to appear as separate posts with the newest first. I brought the installments together under one title with a table of contents and next-part links, while preserving the original URLs. When Manick publishes Part 9, the contents update automatically and Part 8 links to it.</p>
@@ -780,13 +833,78 @@
         <h3>Implementation and testing</h3>
         <p>I used Python, Django, and MySQL for the content models and publishing workflow, and Django templates, HTML, CSS, and JavaScript for responsive layouts. The site is hosted on PythonAnywhere. I tested adding a chapter, moving a photo between categories, and keeping draft edits private through the admin forms.</p>
       </section>
-        <a class="manick-case-site" href="https://www.albertmanick.com/" target="_blank" rel="noreferrer">Visit Albert Manick’s website</a>
+        <a class="project-case-site" href="https://www.albertmanick.com/" target="_blank" rel="noreferrer">Visit Albert Manick’s website</a>
+      </div>
+    </dialog>
+
+    <dialog id="case-volunteer-platform" class="project-case" aria-labelledby="case-volunteer-platform-title">
+      <div class="project-case-header">
+        <h2 id="case-volunteer-platform-title">Volunteer Platform</h2>
+        <form method="dialog"><button class="project-case-close" type="submit" autofocus>Close</button></form>
+      </div>
+      <div class="project-case-body">
+        <section>
+          <h3>Purpose</h3>
+          <p>I built this undergraduate capstone to make community service opportunities easier to find. The site gives volunteers a starting point for discovering organizations and reviewing available opportunities.</p>
+        </section>
+        <section>
+          <h3>What I built</h3>
+          <p>I organized the experience around organization listings and opportunities, then created responsive layouts so visitors could browse on phones and larger screens.</p>
+        </section>
+        <section>
+          <h3>Technology</h3>
+          <p>The project uses React, Node.js, and Firebase. The linked site is the academic project.</p>
+        </section>
+        <a class="project-case-site" href="https://volunteer-project-e97cb.web.app/" target="_blank" rel="noreferrer">Visit live project</a>
+      </div>
+    </dialog>
+
+    <dialog id="case-mqs-hvac" class="project-case" aria-labelledby="case-mqs-hvac-title">
+      <div class="project-case-header">
+        <h2 id="case-mqs-hvac-title">MQS HVAC Website</h2>
+        <form method="dialog"><button class="project-case-close" type="submit" autofocus>Close</button></form>
+      </div>
+      <div class="project-case-body">
+        <section>
+          <h3>Purpose</h3>
+          <p>I built the site so prospective customers could understand which HVAC services the company offers and find a way to get in touch.</p>
+        </section>
+        <section>
+          <h3>What I built</h3>
+          <p>I organized the service information into dedicated pages, used service-specific imagery to help visitors tell offerings apart, and made the contact options easy to find on smaller screens.</p>
+        </section>
+        <section>
+          <h3>Technology</h3>
+          <p>The site is built in Wix. My work included responsive layouts, content structure, and search-friendly service pages.</p>
+        </section>
+        <a class="project-case-site" href="https://www.mqshvac.com/" target="_blank" rel="noreferrer">View website</a>
+      </div>
+    </dialog>
+
+    <dialog id="case-disaster-relief" class="project-case" aria-labelledby="case-disaster-relief-title">
+      <div class="project-case-header">
+        <h2 id="case-disaster-relief-title">Disaster Relief Resource Coordination System (DRRCS)</h2>
+        <form method="dialog"><button class="project-case-close" type="submit" autofocus>Close</button></form>
+      </div>
+      <div class="project-case-body">
+        <section>
+          <h3>Purpose</h3>
+          <p>I built this master’s capstone to demonstrate how a disaster response team could coordinate requests for emergency relief. It is an academic demo, not an emergency service.</p>
+        </section>
+        <section>
+          <h3>What I built</h3>
+          <p>The application lets users submit a request and follow its status. Coordinators can review requests, assign work, and update progress. I used role-based access to separate what different users can do.</p>
+        </section>
+        <section>
+          <h3>Architecture</h3>
+          <p>A React interface built with Vite connects to a Java 17 and Spring Boot REST API. The project uses Spring Security and JWT for authentication, MongoDB for records, Redis and Apache Kafka, plus Docker Compose and OpenAPI/Swagger for running and documenting the system.</p>
+        </section>
+        <a class="project-case-site" href="https://disaster-relief-resource-coordinati.vercel.app/" target="_blank" rel="noreferrer">View academic demo</a>
       </div>
     </dialog>
     <script>
-      (() => {
-        const panel = document.getElementById("manick-case");
-        const trigger = document.getElementById("manick-case-trigger");
+      document.querySelectorAll(".project-case-trigger").forEach((trigger) => {
+        const panel = document.getElementById(trigger.getAttribute("aria-controls"));
         trigger.addEventListener("click", () => {
           if (!panel.open) {
             panel.showModal();
@@ -794,7 +912,7 @@
           }
         });
         panel.addEventListener("close", () => trigger.focus({ preventScroll: true }));
-      })();
+      });
     </script>
   </body>
 </html>
