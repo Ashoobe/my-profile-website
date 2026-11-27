@@ -30,6 +30,19 @@
       @media (max-width: 780px) {
         .workplace-grid { grid-template-columns: minmax(0, 1fr); }
       }
+      .manick-case-trigger { align-self: flex-start; margin-top: .65rem; min-height: 44px; border: 0; padding: .2rem 0; background: transparent; font: inherit; font-weight: 650; color: var(--link-accent); cursor: pointer; text-align: left; text-decoration: underline; text-underline-offset: .18em; }
+      .manick-case-trigger:hover { color: var(--text); }
+      #manick-case { position: fixed; inset: 0; margin: auto; width: min(48rem, calc(100% - 2rem)); max-width: none; max-height: calc(100% - 2rem); max-height: calc(100dvh - 2rem); padding: 0; overflow: auto; overscroll-behavior: contain; border: 1px solid var(--border); border-radius: var(--radius-md); background: var(--surface); color: var(--text); box-shadow: var(--shadow-lift); }
+      #manick-case::backdrop { background: rgba(11, 17, 24, .67); }
+      .manick-case-header { position: sticky; top: 0; z-index: 1; display: flex; align-items: flex-start; justify-content: space-between; gap: .75rem; padding: clamp(.85rem, 3vw, 1.4rem); background: var(--surface); border-bottom: 1px solid var(--border); }
+      .manick-case-header h2 { font-size: clamp(1.25rem, 3vw, 1.85rem); margin: 0; line-height: 1.2; }
+      .manick-case-close { min-height: 44px; padding: .4rem .75rem; border: 1px solid var(--border); border-radius: .6rem; background: var(--surface-muted); color: var(--text); font: inherit; font-weight: 650; cursor: pointer; }
+      .manick-case-close:hover { border-color: var(--link-accent); }
+      .manick-case-body { padding: clamp(1rem, 4vw, 1.75rem); }
+      .manick-case-body section + section { margin-top: 1.3rem; padding-top: 1.3rem; border-top: 1px solid var(--border); }
+      .manick-case-body h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); margin: 0 0 .4rem; }
+      .manick-case-body p { margin: 0; color: var(--text-soft); line-height: 1.65; }
+      .manick-case-site { display: inline-block; margin-top: 1.4rem; color: var(--link-accent); font-weight: 650; text-decoration: underline; text-underline-offset: .18em; }
     </style>
   </head>
   <body>
@@ -530,7 +543,7 @@
               <li>Python, Django, MySQL, Tiptap</li>
               <li>Django templates, HTML, CSS, JavaScript, PythonAnywhere</li>
             </ul>
-            <a class="client-site-link" href="projects/albert-manick.html" aria-label="Read case study: Albert Manick">Read case study</a>
+            <button type="button" class="manick-case-trigger" id="manick-case-trigger" aria-haspopup="dialog" aria-controls="manick-case" aria-label="Read case study: Albert Manick">Read case study</button>
             <a class="client-site-link" href="https://www.albertmanick.com/" target="_blank" rel="noreferrer">Visit Albert Manick’s website</a>
           </article>
 
@@ -741,5 +754,47 @@
     </footer>
 
     <script src="script.js"></script>
+    <dialog id="manick-case" aria-labelledby="manick-case-title">
+      <div class="manick-case-header">
+        <h2 id="manick-case-title">Albert Manick: Author and Artist Website</h2>
+        <form method="dialog"><button class="manick-case-close" type="submit" autofocus>Close</button></form>
+      </div>
+      <div class="manick-case-body">
+      <section>
+        <h3>Serialized stories</h3>
+        <p>Manick’s eight-part series, <cite>When Dr Lecter meets the Joker</cite>, used to appear as separate posts with the newest first. I brought the installments together under one title with a table of contents and next-part links, while preserving the original URLs. When Manick publishes Part 9, the contents update automatically and Part 8 links to it.</p>
+      </section>
+      <section>
+        <h3>Gallery, poetry, and books</h3>
+        <p>I redesigned the gallery so visitors can browse paintings and exhibition photos, enlarge an image, and read the artist’s note. The poetry page shows one poem at a time. The book page presents <cite>My Soul Laid Bare... Why Not?</cite> with a three-dimensional cover and links to the Kindle and paperback editions.</p>
+      </section>
+      <section>
+        <h3>Content Studio</h3>
+        <p>I customized Django Admin so Manick can manage books, poems, artwork, pages, and blog posts in one place. Tiptap lets him format and preview his writing. He can save draft edits to a published piece without making them public until he’s ready.</p>
+      </section>
+      <section>
+        <h3>Publishing without redesigning</h3>
+        <p>Manick chooses Artwork or Exhibition photos when he uploads an image. The site places it in the right collection and applies the gold frame automatically. When he adds an installment, he selects its series and the dashboard assigns the next available part number.</p>
+      </section>
+      <section>
+        <h3>Implementation and testing</h3>
+        <p>I used Python, Django, and MySQL for the content models and publishing workflow, and Django templates, HTML, CSS, and JavaScript for responsive layouts. The site is hosted on PythonAnywhere. I tested adding a chapter, moving a photo between categories, and keeping draft edits private through the admin forms.</p>
+      </section>
+        <a class="manick-case-site" href="https://www.albertmanick.com/" target="_blank" rel="noreferrer">Visit Albert Manick’s website</a>
+      </div>
+    </dialog>
+    <script>
+      (() => {
+        const panel = document.getElementById("manick-case");
+        const trigger = document.getElementById("manick-case-trigger");
+        trigger.addEventListener("click", () => {
+          if (!panel.open) {
+            panel.showModal();
+            panel.scrollTop = 0;
+          }
+        });
+        panel.addEventListener("close", () => trigger.focus({ preventScroll: true }));
+      })();
+    </script>
   </body>
 </html>
